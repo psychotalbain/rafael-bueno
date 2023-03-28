@@ -49,9 +49,9 @@ function applyFilter(id, value) {
                 }
                 break;
             case "pet":
-                if (value === "true" && item.toxicity) {
+                if (value === "true" && !item.toxicity) {
                     return item;
-                } else if (value === "false" && !item.toxicity) {
+                } else if (value === "false" && item.toxicity) {
                     return item;
                 }
                 break;
@@ -59,23 +59,19 @@ function applyFilter(id, value) {
     });
 
     // rendered list
-    const container = document.getElementById("result");
+    const containerResult = document.getElementById("result");
+    const containerNoResult = document.getElementById("no-result");
     if (listFiltered.length == 0) {
         // if no plants in list
-        container.innerHTML = `
-    <div class="no-item-container">
-      <div class="no-item-title">
-        <h1>No results yet...</h1>
-        <p>
-          Use the filters above to find<br />the plant that best fits your<br />environment
-          :)
-        </p>
-      </div>
-      <img class="no-item-img" src="images/illustrations/no-results.png" />
-    </div>`;
+        containerNoResult.classList.remove("no-show");
+        containerResult.className = "no-show";
     } else {
         // case exist plant in list, renderer
+        containerResult.classList.remove("no-show");
+        containerNoResult.className = "no-show";
+
         const divContainer = document.createElement("div");
+        divContainer.className = "no-show"
         divContainer.className = "item-container";
 
         listFiltered.map((item) => {
@@ -116,8 +112,8 @@ function applyFilter(id, value) {
         });
 
         // clear content in container
-        container.innerHTML = "";
+        containerResult.innerHTML = "";
         // set div list with items in container
-        container.appendChild(divContainer);
+        containerResult.appendChild(divContainer);
     }
 }

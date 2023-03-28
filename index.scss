@@ -29,6 +29,7 @@ body {
   img.mobile {
     display: none;
   }
+
   img.desktop {
     display: block;
   }
@@ -59,11 +60,12 @@ body {
   height: 100%;
   left: 20%;
 
-  & > p {
+  &>p {
     margin: 16px 0 24px 0;
     font-size: 25px;
   }
-  & > h2 {
+
+  &>h2 {
     margin-bottom: 15px;
     font-size: 40px;
   }
@@ -100,11 +102,12 @@ p {
     img.mobile {
       display: block;
     }
+
     img.desktop {
       display: none;
     }
 
-    & > div:last-child {
+    &>div:last-child {
       display: none;
     }
 
@@ -115,22 +118,24 @@ p {
       left: 40px;
       top: 0;
 
-      & > p {
+      &>p {
         margin: 30px 0 40px 0;
         font-size: 25px;
       }
-      & > h2 {
+
+      &>h2 {
         margin-bottom: 15px;
         font-size: 40px;
       }
 
-      & > img {
+      &>img {
         width: 50px;
         height: 50px;
       }
     }
   }
 }
+
 // END: Header
 
 // START: Selector
@@ -164,6 +169,7 @@ p {
 .select-title {
   margin-top: 10px;
   color: #707070;
+
   b {
     color: #707070;
   }
@@ -171,7 +177,8 @@ p {
 
 .selector-component {
   font-size: 15px;
-  margin-top: 20px; /* adjust this value as needed */
+  margin-top: 20px;
+  /* adjust this value as needed */
   width: 100%;
   border-radius: 20px;
   height: 40px;
@@ -185,10 +192,12 @@ p {
     flex-direction: column;
     align-items: center;
   }
+
   .select-container {
     margin: 25px 0;
   }
 }
+
 // END: Selector
 
 // START: No item
@@ -206,13 +215,13 @@ p {
   flex-direction: column;
   margin: 60px 0;
 
-  & > h1 {
+  &>h1 {
     font-size: 40px;
     color: #a9a9a9;
     font-weight: bold;
   }
 
-  & > p {
+  &>p {
     font-size: 20px;
     color: #a9a9a9;
   }
@@ -234,10 +243,12 @@ p {
   .no-item-title {
     margin: 40px 0;
   }
+
   .no-item-img {
     margin: 0 0 40px 0;
   }
 }
+
 // END: No item
 
 // START: item
@@ -271,7 +282,7 @@ p {
   width: 100%;
   text-align: left;
 
-  & > p {
+  &>p {
     padding: 5px 20px;
     font-size: 15px;
     color: #15573f;
@@ -301,4 +312,8 @@ p {
     height: 250px;
   }
 }
+
 // END: item
+.no-show {
+  display: none;
+}
