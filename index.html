@@ -38,13 +38,15 @@
     <div class="selectors-container">
       <!-- Select Sun -->
       <div class="select-container">
-        <img src="../../images/illustrations/sun.png" alt="select-icon-sun" class="select-left-icon" />
+        <div class="select-icon">
+          <img src="../../images/illustrations/sun.png" alt="select-icon-sun" class="select-left-icon" />
+        </div>
         <p class="select-title">
           <b>1.</b> Set the amount of <b>sunlight</b> your plant will get.
         </p>
 
         <select class="selector-component" id="sun" onchange="selectFilter(this)">
-          <option value="" disabled selected>Select...</option>
+          <option value="" selected>Select...</option>
           <option value="no">no</option>
           <option value="low">low</option>
           <option value="high">high</option>
@@ -53,14 +55,16 @@
 
       <!-- Select Water -->
       <div class="select-container">
-        <img src="../../images/illustrations/wateringcan.png" alt="select-icon-water"
-          class="select-left-icon icon-flip" />
+        <div class="select-icon">
+          <img src="../../images/illustrations/wateringcan.png" alt="select-icon-water"
+            class="select-mid-icon icon-flip" />
+        </div>
         <p class="select-title">
-          <b>2.</b> How often you want do <b>water</b> your plant?
+          <b>2.</b> How often you want to <b>water</b> your plant?
         </p>
 
         <select class="selector-component" id="water" onchange="selectFilter(this)">
-          <option value="" disabled selected>Select...</option>
+          <option value="" selected>Select...</option>
           <option value="regularly">regularly</option>
           <option value="daily">daily</option>
           <option value="rarely">rarely</option>
@@ -69,13 +73,15 @@
 
       <!-- Select Toxicity -->
       <div class="select-container">
-        <img src="../../images/illustrations/dog.png" alt="select-icon-dog" class="select-left-icon" />
+        <div class="select-icon">
+          <img src="../../images/illustrations/dog.png" alt="select-icon-dog" class="select-right-icon" />
+        </div>
         <p class="select-title">
-          <b>3.</b> Do you have pets? Do they <b>chew</b> plants?
+          <b>3.</b> Do you have pets? Do<br>they <b>chew</b> plants?
         </p>
 
         <select class="selector-component" id="pet" onchange="selectFilter(this)">
-          <option value="" disabled selected>Select...</option>
+          <option value="" selected>Select...</option>
           <option value="true">true</option>
           <option value="false">false</option>
         </select>

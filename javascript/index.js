@@ -67,12 +67,28 @@ function applyFilter(id, value) {
         containerResult.className = "no-show";
     } else {
         // case exist plant in list, renderer
-        containerResult.classList.remove("no-show");
         containerNoResult.className = "no-show";
+        containerResult.classList.remove("no-show");
 
+        // create div bottom
         const divContainer = document.createElement("div");
-        divContainer.className = "no-show"
-        divContainer.className = "item-container";
+        // create div for title
+        const divTitle = document.createElement("div");
+        // create div for list items
+        const divList = document.createElement("div");
+        // create text top
+        const textTop = document.createElement("p");
+        // create image top
+        const imgTop = document.createElement("img");
+
+        // add resources and class
+        divTitle.className = "div-title";
+        textTop.textContent = "Our picks for you";
+        imgTop.src = "../images/illustrations/pick.png";
+        divList.className = "item-container";
+        // add elements in div
+        divTitle.appendChild(imgTop);
+        divTitle.appendChild(textTop);
 
         listFiltered.map((item) => {
             // create element tags html
@@ -98,18 +114,12 @@ function applyFilter(id, value) {
             divPrice.appendChild(price);
             divItem.appendChild(divPrice);
 
-            // item created:
-            // <div class="item">
-            //  <img  class="item-img" src={item.url}/>
-            //  <div class="item-title">
-            //     <p>{item.name}</p>
-            //     <p>{item.price}</p>
-            //  </div>
-            // </div>
-
             // add create item in div line list, flex
-            divContainer.appendChild(divItem);
+            divList.appendChild(divItem);
         });
+
+        divContainer.appendChild(divTitle);
+        divContainer.appendChild(divList);
 
         // clear content in container
         containerResult.innerHTML = "";

@@ -13,6 +13,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Montserrat Extra Bold";
+  src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pluto Medium";
+  src: url("../fonts/Pluto/Pluto-Medium.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: black;
@@ -35,6 +49,12 @@ body {
   }
 }
 
+@media (min-width: 600px) {
+  .header {
+    min-height: 500px;
+  }
+}
+
 .header img {
   height: 100%;
   width: auto;
@@ -51,6 +71,7 @@ body {
 }
 
 .header-title {
+  padding: 50px 15%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -61,18 +82,22 @@ body {
   left: 20%;
 
   &>p {
-    margin: 16px 0 24px 0;
     font-size: 25px;
+    font-weight: bold;
+    padding-top: 15px;
+    font-family: "Pluto Medium";
   }
 
   &>h2 {
-    margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 3.8em;
+    line-height: 1.3em;
+    font-family: "Montserrat Bold";
   }
 
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
+    padding-bottom: 15px;
   }
 }
 
@@ -125,7 +150,8 @@ p {
 
       &>h2 {
         margin-bottom: 15px;
-        font-size: 40px;
+        font-size: 2em;
+        line-height: 1.3em;
       }
 
       &>img {
@@ -146,7 +172,7 @@ p {
   justify-content: space-between;
   overflow: hidden;
   background-color: white;
-  padding: 50px 11%;
+  padding: 50px 20%;
 }
 
 .select-container {
@@ -155,35 +181,60 @@ p {
   align-items: flex-start;
   justify-content: center;
   text-align: left;
+  width: 210px;
 }
 
 .icon-flip {
   transform: scaleX(-1);
 }
 
+.select-icon {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .select-left-icon {
   float: left;
-  height: 80px;
+  width: 75px;
+  height: 75px;
+}
+
+.select-mid-icon {
+  float: left;
+  width: 105px;
+  height: 75px;
+}
+
+.select-right-icon {
+  float: left;
+  width: 75px;
+  height: 60px;
 }
 
 .select-title {
   margin-top: 10px;
-  color: #707070;
+  font-size: small;
+  color: #777777;
 
   b {
-    color: #707070;
+    color: #777777;
   }
 }
 
 .selector-component {
-  font-size: 15px;
   margin-top: 20px;
   /* adjust this value as needed */
   width: 100%;
   border-radius: 20px;
   height: 40px;
-  color: #707070;
+  color: #a9a9a9;
+  font-size: small;
+  font-weight: lighter;
   padding-left: 15px;
+  border-color: #a9a9a9;
 }
 
 @media (max-width: 600px) {
@@ -195,6 +246,8 @@ p {
 
   .select-container {
     margin: 25px 0;
+    max-width: 265px;
+    width: 95%;
   }
 }
 
@@ -202,10 +255,11 @@ p {
 
 // START: No item
 .no-item-container {
+  padding: 50px 20%;
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #f6f6f6;
 }
 
@@ -228,13 +282,14 @@ p {
 }
 
 .no-item-img {
-  margin: 60px 0;
+  padding: 60px 20% 0 0;
   width: 100px;
   height: 200px;
 }
 
 @media (max-width: 600px) {
   .no-item-container {
+    padding: 30px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,6 +306,50 @@ p {
 
 // END: No item
 
+.div-title {
+  height: 180px;
+  padding: 0px 20%;
+  background-color: #f6f6f6;
+
+  &>img {
+    width: 158px;
+    height: 78px;
+    padding: 37px 0 40px 0;
+  }
+
+  &>p {
+    font-family: "Montserrat Extra Bold";
+    color: #0C261C;
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    line-height: 1.0em;
+  }
+}
+
+@media (max-width: 600px) {
+  .div-title {
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f6f6;
+
+    &>img {
+      width: 146px;
+      height: 72px;
+      padding: 48px 0 40px 0;
+    }
+
+    &>p {
+      font-family: "Montserrat Bold";
+      color: #0C261C;
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      font-size: 2em;
+    }
+  }
+}
+
 // START: item
 .item-container {
   display: flex;
@@ -258,16 +357,16 @@ p {
   flex-direction: row;
   justify-content: flex-start;
   overflow: hidden;
-  gap: 10px;
+  gap: 20px;
   background-color: #f6f6f6;
-  padding: 20px 10%;
+  padding: 60px 20%;
 }
 
 .item {
   display: flex;
   flex-direction: column;
   background-color: white;
-  width: 200px;
+  width: 170px;
   height: 260px;
   border-radius: 10px;
   justify-content: center;
@@ -292,7 +391,7 @@ p {
 
 .item-img {
   width: 100%;
-  height: 200px;
+  height: 65%;
   object-fit: contain;
 }
 
@@ -303,7 +402,7 @@ p {
   }
 
   .item {
-    width: 255px;
+    width: 95%;
     height: 320px;
     border-radius: 10px;
   }
